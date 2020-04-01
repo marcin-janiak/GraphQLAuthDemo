@@ -20,26 +20,26 @@ namespace GraphQLAuthDemo
         }
 
         [Authorize]
-        public List<string> AuthorizedBetterWay([GlobalState("currentUser")] CurrentUser user)
+        public List<string> AuthorizedBetterWay([CurrentUserGlobalState] CurrentUser user)
         {
             return user.Claims;
         }
 
 
         [Authorize(Roles = new[] {"leader"})]
-        public List<string> AuthorizedLeader([GlobalState("currentUser")] CurrentUser user)
+        public List<string> AuthorizedLeader([CurrentUserGlobalState] CurrentUser user)
         {
             return user.Claims;
         }
 
         [Authorize(Roles = new[] {"dev"})]
-        public List<string> AuthorizedDev([GlobalState("currentUser")] CurrentUser user)
+        public List<string> AuthorizedDev([CurrentUserGlobalState] CurrentUser user)
         {
             return user.Claims;
         }
 
         [Authorize(Policy = "DevDepartment")]
-        public List<string> AuthorizedDevDepartment([GlobalState("currentUser")] CurrentUser user)
+        public List<string> AuthorizedDevDepartment([CurrentUserGlobalState] CurrentUser user)
         {
             return user.Claims;
         }

@@ -16,9 +16,9 @@ namespace GraphQLAuthDemo
         }
     }
 
-    public class AuthorizedGlobalState : GlobalStateAttribute
+    public class CurrentUserGlobalState : GlobalStateAttribute
     {
-        public AuthorizedGlobalState() : base("currentUser")
+        public CurrentUserGlobalState() : base("currentUser")
         {
         }
     }
